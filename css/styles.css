@@ -53,7 +53,7 @@
  *      ## intro transitions
  *  # DETAILS
  *      ## tabs
- *      ## services
+ *      ## schedule
  *      ## contact
  *      ## go top
  *      ## footer 
@@ -1299,17 +1299,24 @@ h1 {
     text-rendering         : optimizeLegibility;
 }
 
-h2, h3 {
+h2, h4, .h4 {
+    font-family            : var(--font-frontage);
+    font-weight            : 500;
+    color                  : var(--color-2-darker);
+    font-variant-ligatures : common-ligatures;
+    text-rendering         : optimizeLegibility;
+}
+
+h3 {
     font-family            : var(--font-ephesis);
-    font-weight            : 600;
+    font-weight            : 500;
     color                  : var(--color-2-darker);
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
 }
 
 
-h4, h5, 
-.h1, .h2, .h3, .h4, .h5 {
+h5 {
     font-family            : var(--font-montserrat);
     font-weight            : 500;
     color                  : var(--color-2-darker);
@@ -3781,7 +3788,7 @@ img.u-pull-left {
 }
 
 /* ------------------------------------------------------------------- 
- * ## services 
+ * ## schedule 
  * ------------------------------------------------------------------- */
 .faq-list {
     margin-top    : var(--vspace-1_5);
