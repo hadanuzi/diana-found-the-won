@@ -113,7 +113,7 @@
     --color-2-lighter              : hsla(344, 44%, 45%, 1);
     --color-2-light                : hsla(344, 44%, 35%, 1);
     --color-2-dark                 : hsla(344, 44%, 15%, 1);
-    --color-2-darker               : hsla(344, 44%, 5%, 1);
+    --color-2-darker               : hsla(344, 44%, 10%, 1);
     --color-3-lighter              : hsla(40, 100%, 97%, 1);
     --color-3-light                : hsla(40, 100%, 85%, 1);
     --color-3-dark                 : hsla(40, 100%, 65%, 1);
@@ -166,13 +166,15 @@
     --color-text-light             : var(--color-gray-7);
     --color-placeholder            : var(--color-gray-6);
     --color-copyright              : var(--color-gray-4);
+    --color-link                   : var(--color-2-light);
+    --color-link-hover             : var(--color-2-dark);
 
     /* buttons
      */
     --color-btn                    : var(--color-3-light);
     --color-btn-text               : var(--color-black);
     --color-btn-hover              : var(--color-3);
-    --color-btn-hover-text         : var(--color--black);
+    --color-btn-hover-text         : var(--color-black);
     --color-btn-primary            : var(--color-2-dark);
     --color-btn-primary-text       : var(--color-3-light);
     --color-btn-primary-hover      : var(--color-2-darker);
@@ -193,6 +195,21 @@
     --color-body                   : var(--color-3-lighter);
     --color-border                 : var(--color-2-darker);
     --border-radius                : 3px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-body                   : var(--color-gray-10);
+    --color-text                   : var(--color-3-lighter);
+    --color-text-dark              : var(--color-3-lighter);
+    --color-border                 : var(--color-2-lighter);
+    --color-btn-stroke             : var(--color-2-lighter);
+    --color-btn-stroke-text        : var(--color-3-light);
+    --color-btn-stroke-hover       : var(--color-2-dark);
+    --color-btn-stroke-hover-text  : var(--color-3-light);
+    --color-copyright              : var(--color-gray-14);
+    --color-link                   : var(--color-3-light);
+    --color-link-hover             : var(--color-3);
+  }
 }
 
 /* ------------------------------------------------------------------- 
@@ -1273,16 +1290,16 @@ body {
 /* links
  */
 a {
-    color         : var(--color-2);
-    border-bottom : 1px solid var(--color-2);
+    color         : var(--color-link);
+    border-bottom : 1px solid var(--color-link);
     transition    : all 0.3s ease-in-out;
 }
 
 a:focus,
 a:hover,
 a:active {
-    color         : black;
-    border-bottom : 1px solid black;
+    color         : var(--color-link-hover);
+    border-bottom : 1px solid var(--color-link-hover);
 }
 
 a:hover,
@@ -1295,11 +1312,10 @@ a:active {
 h1 {
     font-family            : var(--font-argue);
     font-weight            : 500;
-    color                  : var(--color-2-darker);
+    color                  : var(--color-2-dark);
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
 }
-
 h2, h4, .h4 {
     font-family            : var(--font-frontage);
     font-weight            : 500;
@@ -1323,6 +1339,15 @@ h5 {
     color                  : var(--color-2-darker);
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
+}
+
+@media (prefers-color-scheme: dark) {
+    h1 {
+        color              : var(--color-3-light);
+    }
+    h2, h3, h4, h5 {
+        color              : var(--color-3-lighter);
+    }
 }
 
 h6 {
@@ -3749,6 +3774,12 @@ img.u-pull-left {
     position : relative;
 }
 
+@media (prefers-color-scheme: dark) {
+    .tab-nav__list a {
+        color    : var(--color-2-lighter);
+    }
+}
+
 .tab-nav__list a[data-tab-active] {
     color       : var(--color-3-light);
     font-weight : 400;
@@ -3811,6 +3842,13 @@ img.u-pull-left {
     counter-increment : ctr;
 }
 
+@media (prefers-color-scheme: dark) {
+    .faq-list h4::before {
+        color             : var(--color-3-lighter);
+    }
+}
+
+
 .faq-list__item {
     margin-bottom : var(--vspace-0_5);
 }
@@ -3854,6 +3892,7 @@ img.u-pull-left {
     bottom     : 6.4rem;
     right      : 3.6rem;
 }
+
 
 .ss-go-top svg {
     height : 1.8rem;
@@ -3911,7 +3950,17 @@ img.u-pull-left {
     left             : calc(50% + var(--vspace-0_5));
     bottom           : calc(100% + 2.8rem);
 }
-
+@media (prefers-color-scheme: dark) {
+    .ss-go-top a span {
+        color            : var(--color-2-lighter);
+    }
+    .ss-go-top svg path {
+        fill       : var(--color-2-lighter);
+    }
+    .ss-go-top a {
+        border          : 0.15rem solid var(--color-2-lighter);
+    }
+}
 /* ------------------------------------------------------------------- 
  * ## footer 
  * ------------------------------------------------------------------- */

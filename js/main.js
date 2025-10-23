@@ -416,46 +416,6 @@
     };
 
 
-   /* Swap Dark/Light Mode
-    * ---------------------------------------------------- */ 
-    const toggleMode = function() {
-        const trigger = document.querySelector('.ss-mode-trigger');
-        const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-        let isDarkMode = false;
-
-        function toggle() {
-            isDarkMode = !isDarkMode;
-            const root = document.documentElement;
-            // Get the current values of the CSS variables
-            const body = getComputedStyle(root).getPropertyValue('--color-body');
-            const text = getComputedStyle(root).getPropertyValue('--color-text');
-            const color2Darker = getComputedStyle(root).getPropertyValue('--color-2-darker');
-            const color2Lighter = getComputedStyle(root).getPropertyValue('--color-2-lighter');
-            const black = getComputedStyle(root).getPropertyValue('--color-black');
-            const white = getComputedStyle(root).getPropertyValue('--color-white');
-            const lightGray = getComputedStyle(root).getPropertyValue('--color-gray-4');
-            const darkGray = getComputedStyle(root).getPropertyValue('--color-gray-14');
-
-            // Swap the values
-            root.style.setProperty('--color-2-darker', color2Lighter);
-            root.style.setProperty('--color-2-lighter', color2Darker);
-            root.style.setProperty('--color-text-dark', body);
-            root.style.setProperty('--color-text-dark', body);
-            root.style.setProperty('--color-body', text);
-            root.style.setProperty('--color-text', body);
-            root.style.setProperty('--color-btn-stroke-text', isDarkMode ? white : black);
-            root.style.setProperty('--color-copyright', isDarkMode ? darkGray : lightGray);
-        }
-        if (trigger) {
-            trigger.addEventListener('click', toggle);  
-        }
-
-        if (prefersDarkMode) {
-            toggle();
-        }
-    };
-
-    
    /* RSVP on click
     * ---------------------------------------------------- */ 
     const rsvp = function() {
@@ -485,7 +445,6 @@
         ssMoveTo();
         ssBackToTop();
         ssRevealingEffect();
-        toggleMode();
         rsvp();
 
     })();
