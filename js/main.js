@@ -161,7 +161,13 @@
         if (!(tabList && tabPanels)) return;
 
         const tabClickEvent = function(tabLink, tabLinks, tabPanels, linkIndex, e) {
-    
+            // if we click the RSVP tab, do nothing (links out to withjoy)
+            if (linkIndex === 4) {
+                window.open('https://withjoy.com/diana-and-wongi-may-26/rsvp','_blank')
+                e.target.blur();
+                return;
+            }
+
             // Reset all the tablinks
             tabLinks.forEach(function(link) {
                 link.setAttribute('tabindex', '-1');
@@ -175,9 +181,9 @@
             tabLink.setAttribute('aria-selected', 'true');
             tabLink.parentNode.setAttribute('data-tab-active', '');
             tabLink.setAttribute('data-tab-active', '');
-    
             // Change tab panel visibility
             tabPanels.forEach(function(panel, index) {
+          
                 if (index != linkIndex) {
                     panel.setAttribute('aria-hidden', 'true');
                     panel.removeAttribute('data-tab-active');
@@ -291,7 +297,7 @@
                 'aria-hidden': 'true',
                 'aria-labelledby': 'tab-link-' + i
             };
-          
+
             if (nextTab) {
                 let nextTabLink = document.createElement('a');
                 let nextTabLinkIndex = (i < tabPanels.length - 1) ? i + 1 : 0;
@@ -419,7 +425,7 @@
    /* RSVP on click
     * ---------------------------------------------------- */ 
     const rsvp = function() {
-        const triggers = document.querySelectorAll('.ss-rsvp-trigger');
+        const triggers = document.querySelectorAll('.rsvp-trigger');
 
         if (!(triggers.length)) return;
 
