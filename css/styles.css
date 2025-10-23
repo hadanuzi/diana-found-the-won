@@ -3960,6 +3960,11 @@ img.u-pull-left {
     .ss-go-top a {
         border          : 0.15rem solid var(--color-2-lighter);
     }
+    .ss-go-top a:focus,
+    .ss-go-top a:hover {
+        background-color : var(--color-2-dark);
+        border-color     : var(--color-2-dark);
+    }
 }
 /* ------------------------------------------------------------------- 
  * ## footer 
