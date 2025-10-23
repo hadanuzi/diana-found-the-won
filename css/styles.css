@@ -100,16 +100,16 @@
      * color-2(#36151E)
      * color-3(#FFE4AF)
      */
-    --color-1                      : hsla(76, 6%, 35%, 1);
+    --color-1                      : hsla(23, 36%, 20%, 1);
     --color-2                      : hsla(344, 44%, 25%, 1);
     --color-3                      : hsla(40, 100%, 75%, 1);
 
     /* theme color variations
      */
-    --color-1-lighter              : hsla(76, 6%, 55%, 1);
-    --color-1-light                : hsla(76, 6%, 45%, 1);
-    --color-1-dark                 : hsla(76, 6%, 25%, 1);
-    --color-1-darker               : hsla(76, 6%, 15%, 1);
+    --color-1-lighter              : hsla(23, 36%, 40%, 1);
+    --color-1-light                : hsla(23, 36%, 30%, 1);
+    --color-1-dark                 : hsla(23, 36%, 15%, 1);
+    --color-1-darker               : hsla(23, 36%, 5%, 1);
     --color-2-lighter              : hsla(344, 44%, 45%, 1);
     --color-2-light                : hsla(344, 44%, 35%, 1);
     --color-2-dark                 : hsla(344, 44%, 15%, 1);
@@ -165,6 +165,7 @@
     --color-text                   : var(--color-gray-10);
     --color-text-light             : var(--color-gray-7);
     --color-placeholder            : var(--color-gray-6);
+    --color-copyright              : var(--color-gray-4);
 
     /* buttons
      */
@@ -190,7 +191,7 @@
     /* others
      */
     --color-body                   : var(--color-3-lighter);
-    --color-border                 : rgba(0, 0, 0, .1);
+    --color-border                 : var(--color-2-darker);
     --border-radius                : 3px;
 }
 
@@ -3928,6 +3929,11 @@ img.u-pull-left {
     font-size   : calc(var(--text-size) * 0.75);
     line-height : var(--vspace-0_875);
     position    : relative;
+    color       : var(--color-copyright);
+}
+
+.ss-copyright a {
+    color       : var(--color-copyright);
 }
 
 .ss-copyright span {
