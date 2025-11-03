@@ -70,7 +70,7 @@
 /* ------------------------------------------------------------------- 
  * ## fonts 
  * ------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 @font-face {
     font-family: 'Argue';
     src: url("../fonts/Argue.otf") format("opentype");
@@ -79,12 +79,17 @@
     font-family: 'Frontage';
     src: url("../fonts/Frontage-Regular.otf") format("opentype");
 }
+@font-face {
+    font-family: 'Butler';
+    src: url("../fonts/Butler_Regular.otf") format("opentype");
+}
+
 
 :root {
     --font-argue      : "Argue", serif;
     --font-frontage   : "Frontage", sans-serif;
     --font-montserrat : "Montserrat", sans-serif;
-    --font-ephesis     : "Ephesis", serif;
+    --font-butler     : "Butler", serif;
 
     /* monospace
     */
@@ -95,14 +100,9 @@
  * ## colors
  * ------------------------------------------------------------------- */
 :root {
-
-    /* color-1(#5B5E53)
-     * color-2(#36151E)
-     * color-3(#FFE4AF)
-     */
     --color-1                      : hsla(23, 36%, 20%, 1);
-    --color-2                      : hsla(344, 44%, 25%, 1);
-    --color-3                      : hsla(40, 100%, 75%, 1);
+    --color-2                      : hsla(350, 60%, 30%, 1);
+    --color-3                      : hsla(40, 100%, 55%, 1);
 
     /* theme color variations
      */
@@ -110,10 +110,10 @@
     --color-1-light                : hsla(23, 36%, 30%, 1);
     --color-1-dark                 : hsla(23, 36%, 15%, 1);
     --color-1-darker               : hsla(23, 36%, 5%, 1);
-    --color-2-lighter              : hsla(344, 44%, 45%, 1);
-    --color-2-light                : hsla(344, 44%, 35%, 1);
-    --color-2-dark                 : hsla(344, 44%, 15%, 1);
-    --color-2-darker               : hsla(344, 44%, 10%, 1);
+    --color-2-lighter              : hsla(350, 60%, 50%, 1);
+    --color-2-light                : hsla(350, 60%, 40%, 1);
+    --color-2-dark                 : hsla(350, 60%, 20%, 1);
+    --color-2-darker               : hsla(350, 60%, 15%, 1);
     --color-3-lighter              : hsla(40, 100%, 97%, 1);
     --color-3-light                : hsla(40, 100%, 85%, 1);
     --color-3-dark                 : hsla(40, 100%, 65%, 1);
@@ -192,13 +192,13 @@
 
     /* others
      */
-    --color-body                   : var(--color-3-lighter);
+    --color-bg                     : var(--color-3-lighter);
     --color-border                 : var(--color-2-darker);
     --border-radius                : 3px;
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-body                   : var(--color-gray-10);
+    --color-bg                     : var(--color-gray-10);
     --color-text                   : var(--color-3-lighter);
     --color-text-dark              : var(--color-3-lighter);
     --color-border                 : var(--color-2-lighter);
@@ -208,6 +208,7 @@
     --color-btn-stroke-hover-text  : var(--color-3-light);
     --color-copyright              : var(--color-gray-14);
     --color-link                   : var(--color-3-light);
+    --color-link-hover             : var(--color-3);
     --color-link-hover             : var(--color-3);
   }
 }
@@ -541,7 +542,7 @@ body {
 }
 
 body {
-    background-color            : var(--color-body);
+    background-color            : var(--color-bg);
     -webkit-overflow-scrolling  : touch;
     -webkit-text-size-adjust    : 100%;
     -webkit-tap-highlight-color : rgba(0, 0, 0, 0);
@@ -1282,7 +1283,6 @@ textarea {
 body {
     font-family : var(--font-montserrat);
     font-size   : var(--base-font-size);
-    font-weight : 400;
     line-height : var(--vspace-1);
     color       : var(--color-text);
 }
@@ -1311,23 +1311,34 @@ a:active {
  */
 h1 {
     font-family            : var(--font-argue);
-    font-weight            : 500;
-    color                  : var(--color-2-dark);
-    font-variant-ligatures : common-ligatures;
-    text-rendering         : optimizeLegibility;
-}
-h2, h4, .h4 {
-    font-family            : var(--font-frontage);
-    font-weight            : 500;
     color                  : var(--color-2-darker);
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
 }
 
-h3 {
-    font-family            : var(--font-ephesis);
-    font-weight            : 500;
+
+h2, h4, .h4 {
+    font-family            : var(--font-montserrat);
     color                  : var(--color-2-darker);
+    font-weight            : 500;
+    font-variant-ligatures : common-ligatures;
+    text-rendering         : optimizeLegibility;
+}
+
+
+.h4-frontage {
+    font-family            : var(--font-frontage);
+    font-weight            : 500;
+    color                  : var(--color-text);
+    font-variant-ligatures : common-ligatures;
+    text-rendering         : optimizeLegibility;
+}
+
+
+h3 {
+    font-family            : var(--font-butler);
+    font-weight            : 500;
+    color                  : var(--color-2-dark);
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
 }
@@ -1335,7 +1346,6 @@ h3 {
 
 h5 {
     font-family            : var(--font-montserrat);
-    font-weight            : 500;
     color                  : var(--color-2-darker);
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
@@ -1346,7 +1356,7 @@ h5 {
         color              : var(--color-3-light);
     }
     h2, h3, h4, h5 {
-        color              : var(--color-3-lighter);
+        color              : var(--color-3-light);
     }
 }
 
@@ -2084,7 +2094,7 @@ select {
 .ss-custom-select select option {
     padding-left     : 2rem;
     padding-right    : 2rem;
-    background-color : var(--color-body);
+    background-color : var(--color-bg);
 }
 
 .ss-custom-select select::-ms-expand {
@@ -3340,7 +3350,7 @@ img.u-pull-left {
     width            : 90vw;
     max-width        : 34rem;
     border-radius    : var(--border-radius);
-    background-color : var(--color-body);
+    background-color : var(--color-bg);
     box-shadow       : 0 4px 8px rgba(0, 0, 0, 0.1);
     opacity          : 0;
     visibility       : hidden;
@@ -3740,7 +3750,7 @@ img.u-pull-left {
 .tab-nav__list li {
     padding-left : 0;
     flex         : 1;
-    border-right : 1px solid var(--color-body);
+    border-right : 1px solid var(--color-bg);
     overflow     : hidden;
     position     : relative;
 }
@@ -4080,7 +4090,7 @@ img.u-pull-left {
 
     .tab-nav__list li {
         border-right  : none;
-        border-bottom : 1px solid var(--color-body);
+        border-bottom : 1px solid var(--color-bg);
     }
 
     .tab-nav__list li::before {

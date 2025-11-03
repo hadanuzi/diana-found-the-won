@@ -422,6 +422,7 @@
     };
 
 
+
    /* RSVP on click
     * ---------------------------------------------------- */ 
     const rsvp = function() {
@@ -438,6 +439,7 @@
             trigger.addEventListener('click', onClick);
         });
     };
+
 
 
    /* Initialize
