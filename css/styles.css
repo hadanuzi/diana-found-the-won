@@ -1683,6 +1683,27 @@ dd {
     margin : 0 0 0 2rem;
 }
 
+/* definition list dictionary style 
+ */
+.dictionary-style dt {
+    display       : inline;
+    counter-reset : definitions;
+}
+
+.dictionary-style dt+dt:before {
+    content     : ", ";
+    margin-left : -0.2em;
+}
+
+.dictionary-style dd {
+    display           : block;
+    counter-increment : definitions;
+}
+
+.dictionary-style dd:before {
+    content : counter(definitions, decimal) ". ";
+}
+
 /* --------------------------------------------------------------------
  * ## spacing
  * -------------------------------------------------------------------- */
@@ -2903,7 +2924,7 @@ img.u-pull-left {
     bottom              : 0;
     width               : 100%;
     height              : 100%;
-    background-image    : url(../images/pexels-zhangkaiyv-6702290.jpg);
+    background-image    : url(../images/pexels-zhangkaiyv.jpg);
     background-repeat   : no-repeat;
     background-position : center;
     background-size     : cover;
