@@ -113,42 +113,6 @@
     };
 
 
-
-   /* Modal
-    * ---------------------------------------------------- */ 
-    const ssModal = function() {
-
-        const modal = document.querySelector('.ss-modal');
-        const trigger = document.querySelector('.ss-modal-trigger');
-        const closeButton = document.querySelector('.ss-modal__close');
-
-        if (!(modal && trigger && closeButton)) return;
-
-        function toggleModal() {
-            modal.classList.toggle('show-modal');
-        }
-        function windowOnClick(event) {
-            if (event.target === modal) {
-                toggleModal();
-            }
-        }
-        function pressEsc(event) {
-            event = event || window.event;
-
-            if (event.keyCode =='27') {
-                modal.classList.remove('show-modal');
-            }
-        }
-
-        trigger.addEventListener('click', toggleModal);
-        closeButton.addEventListener('click', toggleModal);
-        window.addEventListener('click', windowOnClick);
-        window.addEventListener('keyup', pressEsc);
-
-    }; 
-
-
-
    /* Tabs
     * ---------------------------------------------------- */ 
     const sstabs = function(nextTab = false) {
@@ -369,7 +333,7 @@
     * ------------------------------------------------------ */
     const ssBackToTop = function() {
  
-        const pxShow = 800;
+        const pxShow = 1500;
         const goTopButton = document.querySelector('.ss-go-top');
 
         if (!goTopButton) return;
@@ -448,7 +412,6 @@
 
         ssPreloader();
         ssCountdown();
-        ssModal();
         sstabs();
         ssMoveTo();
         ssBackToTop();

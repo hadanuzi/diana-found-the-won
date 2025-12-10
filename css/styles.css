@@ -1611,71 +1611,6 @@ hr.fancy::before {
 /* --------------------------------------------------------------------
  * ## additional typography & helper classes
  * -------------------------------------------------------------------- */
-.lead,
-.attention-getter {
-    font-family : var(--font-montserrat);
-    font-weight : 300;
-    font-size   : calc(var(--text-size) * 1.25);
-    line-height : calc(1.25 * var(--space));
-    color       : var(--color-text-dark);
-}
-
-@media screen and (max-width: 400px) {
-
-    .lead,
-    .attention-getter {
-        font-size   : var(--text-md);
-        line-height : calc(1.125 * var(--space));
-    }
-}
-
-.pull-quote {
-    position   : relative;
-    padding    : 0;
-    margin-top : 0;
-    text-align : center;
-}
-
-.pull-quote blockquote {
-    border      : none;
-    margin      : 0 auto;
-    max-width   : 62rem;
-    padding-top : var(--vspace-2_5);
-    position    : relative;
-}
-
-.pull-quote blockquote p {
-    font-weight : 400;
-    color       : var(--color-text-dark);
-}
-
-.pull-quote blockquote:before {
-    content           : "";
-    display           : block;
-    height            : var(--vspace-1);
-    width             : var(--vspace-1);
-    background-repeat : no-repeat;
-    background        : center center;
-    background-size   : contain;
-    background-image  : url(../images/icons/icon-quote.svg);
-    transform         : translate(-50%, 0, 0);
-    position          : absolute;
-    top               : var(--vspace-1);
-    left              : 50%;
-}
-
-.drop-cap:first-letter {
-    float          : left;
-    font-family    : var(--font-montserrat);
-    font-weight    : 700;
-    font-size      : calc(3 * var(--space));
-    line-height    : 1;
-    padding        : 0 0.125em 0 0;
-    text-transform : uppercase;
-    background     : transparent;
-    color          : var(--color-text-dark);
-}
-
 .text-center {
     text-align : center;
 }
@@ -1746,54 +1681,6 @@ dt {
 
 dd {
     margin : 0 0 0 2rem;
-}
-
-/* definition list line style 
- */
-.lining dt,
-.lining dd {
-    display : inline;
-    margin  : 0;
-}
-
-.lining dt+dt:before,
-.lining dd+dt:before {
-    content     : "\A";
-    white-space : pre;
-}
-
-.lining dd+dd:before {
-    content : ", ";
-}
-
-.lining dd+dd:before {
-    content : ", ";
-}
-
-.lining dd:before {
-    content     : ": ";
-    margin-left : -0.2em;
-}
-
-/* definition list dictionary style 
- */
-.dictionary-style dt {
-    display       : inline;
-    counter-reset : definitions;
-}
-
-.dictionary-style dt+dt:before {
-    content     : ", ";
-    margin-left : -0.2em;
-}
-
-.dictionary-style dd {
-    display           : block;
-    counter-increment : definitions;
-}
-
-.dictionary-style dd:before {
-    content : counter(definitions, decimal) ". ";
 }
 
 /* --------------------------------------------------------------------
@@ -2841,15 +2728,6 @@ img.u-pull-right {
 
 img.u-pull-left {
     margin : var(--vspace-0_5) var(--vspace-0_875) var(--vspace-0_5) 0;
-}
-
-/* responsive video container
- */
-.video-container {
-    position       : relative;
-    padding-bottom : 56.25%;
-    height         : 0;
-    overflow       : hidden;
 }
 
 .video-container iframe,
@@ -4145,4 +4023,96 @@ img.u-pull-left {
         font-size   : var(--text-xs);
         line-height : var(--vspace-0_5);
     }
+}
+
+/* timeline */
+
+.events::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background: var(--color-2);
+}
+
+.events {
+  position: relative;
+  display: flex;
+  margin-block: 0.5em;
+  flex-direction: column;
+  row-gap: 1em;
+}
+
+.event {
+  display: flex;
+  align-items: baseline;
+}
+.event .marker {
+  position: relative;
+  left: -6px;
+  overflow: visible;
+}
+
+.event.life .marker {
+  fill: var(--color-3);
+}
+.event.gaming .marker {
+  fill: var(--color-1-light);
+}
+.event.love .marker {
+  fill: var(--color-2-lighter);
+}
+.content {
+  padding-left: 12px;
+}
+.content time {
+  font-weight: bold;
+}
+.timeline-photo {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  border-radius: 20px;
+}
+.timeline-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (min-width: 700px) {
+  .events::before {
+    left: 50%;
+  }
+  .event .marker {
+    order: 1;
+  }
+  .event .content {
+    width: 50%;
+    text-align: right;
+    padding-inline: 1em;
+  }
+  .event:is(.flip) {
+    flex-direction: row-reverse;
+
+    .content {
+      text-align: left;
+    }
+    .marker {
+      left: 6px;
+    }
+  }
+  .timeline-photo {
+    object-fit: cover;
+    width: 350px;
+    height: 350px;
+    border-radius: 20px;
+  }
+}
+
+.pad-top {
+    padding-top: 10px;
 }
