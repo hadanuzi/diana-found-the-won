@@ -1322,24 +1322,22 @@ h1 {
 
 h2, h4, .h4 {
     font-family            : var(--font-montserrat);
-    color                  : var(--color-2-darker);
     font-weight            : 500;
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
 }
 
-
-.h4-frontage {
-    font-family            : var(--font-frontage);
+h3.butler {
+    font-family            : var(--font-butler);
     font-weight            : 500;
-    color                  : var(--color-text);
+    color                  : var(--color-3-lighter);
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
 }
-
 
 h3 {
-    font-family            : var(--font-butler);
+    /* font-family            : var(--font-butler); */
+    font-family            : var(--font-montserrat);
     font-weight            : 500;
     color                  : var(--color-2-dark);
     font-variant-ligatures : common-ligatures;
