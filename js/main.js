@@ -127,7 +127,7 @@
         const tabClickEvent = function(tabLink, tabLinks, tabPanels, linkIndex, e) {
             // if we click the RSVP tab, do nothing (links out to withjoy)
             if (linkIndex === 4) {
-                window.open('https://withjoy.com/diana-and-wongi-may-26/rsvp','_blank')
+                window.open('https://withjoy.com/diana-and-wongi-may-9/rsvp','_blank')
                 e.target.blur();
                 return;
             }
@@ -395,7 +395,7 @@
         if (!(triggers.length)) return;
 
         function onClick(event) {
-            window.open('https://withjoy.com/diana-and-wongi-may-26/rsvp','_blank')
+            window.open('https://withjoy.com/diana-and-wongi-may-9/rsvp','_blank')
             event.target.blur();
         }
 
