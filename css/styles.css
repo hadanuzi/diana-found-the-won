@@ -1327,6 +1327,7 @@ h2, h4, .h4 {
     font-weight            : 500;
     font-variant-ligatures : common-ligatures;
     text-rendering         : optimizeLegibility;
+    color                  : var(--color-2-dark);
 }
 
 h3.butler {
@@ -1358,7 +1359,7 @@ h5 {
     h1 {
         color              : var(--color-3-light);
     }
-    h2, h3, h4, h5 {
+    h2, h3, h4, h5, .h4 {
         color              : var(--color-3-light);
     }
 }
