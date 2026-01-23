@@ -2979,6 +2979,20 @@ img.u-pull-left {
 }
 
 /* --------------------------------------------------------------------
+ * ## intro slider photos
+ * -------------------------------------------------------------------- */
+.slide-1 { background-image: url(../images/m-slider-1.jpg); }
+.slide-2 { background-image: url(../images/m-slider-2.jpg); }
+.slide-3 { background-image: url(../images/m-slider-3.jpg); }
+
+/* Desktop */
+@media (min-width: 768px) {
+  .slide-1 { background-image: url(../images/d-slider-1.jpg); }
+  .slide-2 { background-image: url(../images/d-slider-2.jpg); }
+  .slide-3 { background-image: url(../images/d-slider-3.jpg); }
+}
+
+/* --------------------------------------------------------------------
  * ## intro slider
  * -------------------------------------------------------------------- */
 .s-intro__slider {

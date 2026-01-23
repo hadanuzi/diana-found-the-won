@@ -283,6 +283,22 @@
         });
     };
 
+   /* Swiper
+    * ------------------------------------------------------ */ 
+    const ssSwiper = function() {
+
+        const mySwiper = new Swiper('.swiper-container', {
+
+            slidesPerView: 1,
+            effect: 'fade',
+            speed: 2000,
+            autoplay: {
+                delay: 5000,
+            }
+
+        });
+    };
+
 
 
    /* Smooth Scrolling
@@ -415,6 +431,7 @@
         sstabs();
         ssMoveTo();
         ssBackToTop();
+        ssSwiper();
         ssRevealingEffect();
         rsvp();
 

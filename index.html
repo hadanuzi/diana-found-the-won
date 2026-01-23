@@ -52,7 +52,13 @@
     ================================================== -->
     <section id="intro" class="s-intro">
 
-        <div class="s-intro__bg"></div>
+        <div class="s-intro__slider swiper-container">
+            <div class="swiper-wrapper">
+                <div class="s-intro__slide swiper-slide slide-1"></div>
+                <div class="s-intro__slide swiper-slide bg-opacity-50 slide-2"></div>
+                <div class="s-intro__slide swiper-slide bg-opacity-10 slide-3"></div>
+            </div>
+        </div>
 
         <header class="s-intro__header">
         </header>  <!-- s-intro__header -->
@@ -118,18 +124,6 @@
                 RSVP
             </button>
         </div> <!-- s-intro__rsvp -->
-
-        <div hidden class="s-intro__modal ss-modal">
-            <div class="ss-modal__inner">
-
-                <span class="ss-modal__close"></span>
-
-                <img src="./images/calendar.svg" alt="calendar icon" width="60" height="60" />
-
-                <h4>Coming Soon!</h4>
-
-            </div> <!-- end ss-modal__inner -->
-        </div> <!-- end ss-modal -->
 
         <div class="s-intro__scroll">
             <a href="#hidden" class="smoothscroll">
@@ -720,6 +714,15 @@
                                     <h4 class="item-title">Can I change my RSVP later?</h4>
                                     <p>
                                     If something changes after you RSVP, please contact us at <a href="mailto:dianawon59@gmail.com">dianawon59@gmail.com</a> or call us as soon as possible.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="column faq-list__item">
+                                <div class="faq-list__item-content">
+                                    <h4 class="item-title">Who took your engagement photos?</h4>
+                                    <p>
+                                    <a href="https://nicolejkimphotography.com/">Nicole J. Kim Photography!</a>
                                     </p>
                                 </div>
                             </div>
